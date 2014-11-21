@@ -183,49 +183,49 @@ func (l *Logger) Debug(message string) {
 }
 
 // Fatal is just like func l,Cr.tical logger except that it is followed by exit to program
-func (l *Logger) Fatalf(format string, a ...[]interface{}) {
+func (l *Logger) Fatalf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Fatal(message)
 }
 
 // Panic is just like func l.Critical except that it is followed by a call to panic
-func (l *Logger) Panicf(format string, a ...[]interface{}) {
+func (l *Logger) Panicf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Panic(message)
 }
 
 // Critical logs a message at a Critical Level
-func (l *Logger) Criticalf(format string, a ...[]interface{}) {
+func (l *Logger) Criticalf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Critical(message)
 }
 
 // Error logs a message at Error level
-func (l *Logger) Errorf(format string, a ...[]interface{}) {
+func (l *Logger) Errorf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Error(message)
 }
 
 // Warning logs a message at Warning level
-func (l *Logger) Warningf(format string, a ...[]interface{}) {
+func (l *Logger) Warningf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Warning(message)
 }
 
 // Notice logs a message at Notice level
-func (l *Logger) Noticef(format string, a ...[]interface{}) {
+func (l *Logger) Noticef(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Notice(message)
 }
 
 // Info logs a message at Info level
-func (l *Logger) Infof(format string, a ...[]interface{}) {
+func (l *Logger) Infof(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Info(message)
 }
 
 // Debug logs a message at Debug level
-func (l *Logger) Debugf(format string, a ...[]interface{}) {
+func (l *Logger) Debugf(format string, a ...interface{}) {
     message := fmt.Sprintf(format, a)
     l.Debug(message)
 }
