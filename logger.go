@@ -9,6 +9,7 @@ import (
  	"time"
  	"os"
  	"sync/atomic"
+    "strings"
 )
 
 var (
@@ -80,6 +81,17 @@ func initColors() {
 // to os.Stderr
 func New(prefix string, color int) (*Logger, error) {
     initColors()
+
+    var err error 
+    
+    index := strings.LastIndex(prefix, "/")
+    if index > 0 {
+        path := prefix[0:index]
+        err = os.MkdirAll(path, os.ModePerm)
+        if err != nil {
+            return nil, err
+        }
+    }
 
     fullPath := fmt.Sprintf("%v.%v", prefix, time.Now().Format("2006-01-02"))
     out, err := os.OpenFile(fullPath, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
